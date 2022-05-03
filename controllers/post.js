@@ -37,13 +37,13 @@ const postController = {
                 const newPost = await Post.create(data);
                 console.log(newPost);
 
-                const posts = await Post.find({});
-                // const posts = Post.find({}).populate(
-                //     {
-                //         path: 'user',
-                //         select: 'name photo',
-                //     }
-                // );
+                // const posts = await Post.find({});
+                const posts = await Post.find({}).populate(
+                    {
+                        path: 'user',
+                        select: 'name photo',
+                    }
+                );
                 successHandler(res, '新增一則貼文', posts);
             }else{
                 errorHandler(res);
