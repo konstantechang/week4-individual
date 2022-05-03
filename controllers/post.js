@@ -36,10 +36,10 @@ const postController = {
                 console.log(data.content);
                 const newPost = await Post.create(data);
                 console.log(newPost);
-                const posts = Post.find({}).populate(
+                const posts = Post.find().populate(
                     {
                         path: 'user',
-                        select: "name photo",
+                        select: 'name photo',
                     }
                 );
                 successHandler(res, '新增一則貼文', posts);
