@@ -12,9 +12,11 @@ const postSchema = new mongoose.Schema(
         },
         type:{
             type: String,
+            default: '',
         },
         image:{
             type: String,
+            default: '',
         },
         createdAt: {
             type: Date,
@@ -26,9 +28,11 @@ const postSchema = new mongoose.Schema(
         },
         likes:{
             type: Number,
+            default: 0,
         },
         comments: {
             type: Number,
+            default: 0,
         },
 
     },
