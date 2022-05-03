@@ -36,7 +36,7 @@ const postController = {
                 console.log(data.content);
                 const newPost = await Post.create(data);
                 console.log(newPost);
-                const posts = Post.find().populate(
+                const posts = Post.find({"user": data.user}).populate(
                     {
                         path: 'user',
                         select: 'name photo',
