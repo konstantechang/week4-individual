@@ -33,6 +33,7 @@ const postController = {
         try {
             const data = req.body;
             if(data.content){
+                console.log(data.content);
                 await Post.create(data);
                 const posts = Post.find({}).populate(
                     {
